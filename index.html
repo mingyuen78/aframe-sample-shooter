@@ -43,8 +43,10 @@
                     this.el.emit('shoot');
                     this.playSound();
                 });
-                document.body.addEventListener('triggerdown', () => {
-                    this.el.emit('shoot');
+                document.body.addEventListener('triggerdown', (evt) => {
+                    console.log("Evt", evt);
+                    //var whichGun = evt.target.getAttribute("id");
+                    evt.target.emit('shoot');
                     this.playSound();
                 });
             },
